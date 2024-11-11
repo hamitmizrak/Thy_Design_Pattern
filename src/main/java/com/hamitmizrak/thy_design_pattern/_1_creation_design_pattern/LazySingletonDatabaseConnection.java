@@ -5,16 +5,17 @@ import java.sql.DriverManager;
 
 // Veri tabanı bağlantısını sistem  kaynakları çok yoğun bir şekilde kullanıdğı için
 // her seferinde yeni bir bağlantı instance(new) oluşturmadan tek bir bağlantı olmasını sağlayacağız.
-public class DatabaseConnectionLazySingleton {
+// Veritabanı bağlantısını her çağrıldığında kullanılsın
+public class LazySingletonDatabaseConnection {
 
     // Database Connection
     private Connection connection;
 
     // Instance
-    private static DatabaseConnectionLazySingleton instance;
+    private static LazySingletonDatabaseConnection instance;
 
     // Parametresiz Constructor()
-    private DatabaseConnectionLazySingleton(){
+    private LazySingletonDatabaseConnection(){
         // Veritabanı bağlantısını
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -26,9 +27,9 @@ public class DatabaseConnectionLazySingleton {
 
     // Lazy Singleton Design Pattern
     //Eğer instance yoksa oluştur(new)
-    public static DatabaseConnectionLazySingleton getInstance(){
+    public static LazySingletonDatabaseConnection getInstance(){
         if(instance == null){
-            instance = new DatabaseConnectionLazySingleton();
+            instance = new LazySingletonDatabaseConnection();
         }
         return instance;
     }
