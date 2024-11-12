@@ -1,17 +1,20 @@
-package com.hamitmizrak.thy_design_pattern._1_creation_design_pattern;
+package com.hamitmizrak.thy_design_pattern._1_creation_a1_singleton;
 
 // Log işlemlerinde bir uygulamanın merkezi bir log yönetimine ihtiyaç duyarsak
 // Uygulamada aynı log yöneim nesnesini kullanmak istiyorsak
-public class EagerSingletonLogger {
+public class LazySingletonLogger {
 
     // Instance
-    private static final EagerSingletonLogger instance= new EagerSingletonLogger();
+    private static LazySingletonLogger instance;
 
     // Private Constructor
-    private EagerSingletonLogger() {}
+    private LazySingletonLogger() {}
 
     // Eğer nesne daha önceden oluşturulmamışsa aynı nesneyi kullan yoksa eskisini kullana
-    public static EagerSingletonLogger getInstance(){
+    public static LazySingletonLogger getInstance(){
+        if(instance == null){
+            instance = new LazySingletonLogger();
+        }
         return instance;
     }
 

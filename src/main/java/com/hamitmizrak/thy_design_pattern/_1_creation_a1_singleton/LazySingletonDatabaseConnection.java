@@ -1,4 +1,4 @@
-package com.hamitmizrak.thy_design_pattern._1_creation_design_pattern;
+package com.hamitmizrak.thy_design_pattern._1_creation_a1_singleton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
