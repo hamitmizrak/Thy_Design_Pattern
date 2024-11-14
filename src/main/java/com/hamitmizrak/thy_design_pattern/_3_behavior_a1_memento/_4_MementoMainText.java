@@ -26,6 +26,5 @@ public class _4_MementoMainText {
         editor.restore(history.undo());
         System.out.println("2 adım Geri Alındı: "+editor.getText());
 
-
     }
 }
