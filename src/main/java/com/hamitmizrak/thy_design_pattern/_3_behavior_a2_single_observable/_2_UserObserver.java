@@ -7,7 +7,7 @@ public class _2_UserObserver implements _1_IObserver {
     // Field
     private String userName;
 
-    // Parametreli Cosntructor
+    // Parametreli Constructor
     public _2_UserObserver(String userName) {
         this.userName = userName;
     }

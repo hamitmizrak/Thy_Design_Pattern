@@ -2,9 +2,12 @@ package com.hamitmizrak.thy_design_pattern._3_behavior_a2_single_observable;
 
 // Subject Interface
 interface _3_ISubject {
-    void subscribe(_1_IObserver iObserver); // Abone OL
+    // Abone OL
+    void subscribe(_1_IObserver iObserver);
 
-    void unsubscribe(_1_IObserver iObserver); // Abone ÇIKAR
+    // Abone ÇIKAR
+    void unsubscribe(_1_IObserver iObserver);
 
-    void notifyObservers(String message); // Message
+    // Message (Bildirim)
+    void notifyObservers(String message);
 } //end interface ISubject

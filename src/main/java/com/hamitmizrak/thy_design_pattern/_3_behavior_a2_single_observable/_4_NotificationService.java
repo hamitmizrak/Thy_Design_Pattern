@@ -14,6 +14,7 @@ public class _4_NotificationService implements _3_ISubject {
     public void subscribe(_1_IObserver iObserver) {
         observerDataList.add(iObserver);
         System.out.println("Abone olundu: " + ((_2_UserObserver) iObserver).getUserName());
+        allUserList();
     }
 
     // ABONE ÇIKAR
@@ -21,6 +22,7 @@ public class _4_NotificationService implements _3_ISubject {
     public void unsubscribe(_1_IObserver iObserver) {
         observerDataList.remove(iObserver);
         System.out.println("Abonelikten çıkarıldı: " + ((_2_UserObserver) iObserver).getUserName());
+        allUserList();
     }
 
     // NOTITFY
@@ -36,4 +38,10 @@ public class _4_NotificationService implements _3_ISubject {
         System.out.println("Yeni Bildirim: " + message);
         notifyObservers(message);
     }
+
+    // ÜYE SAYISI
+    public void allUserList(){
+        System.out.println("Abone Üye Sayısı: "+ observerDataList.size());
+    }
+
 } //end class NotificationService
